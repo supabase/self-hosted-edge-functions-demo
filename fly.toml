@@ -1,4 +1,4 @@
-# fly.toml file generated for edge-runtime-demo on 2023-04-04T06:55:37+10:00
+# fly.toml file generated for edge-runtime-demo on 2023-04-04T11:42:03+10:00
 
 app = "edge-runtime-demo"
 kill_signal = "SIGINT"
@@ -22,8 +22,8 @@ processes = []
     type = "connections"
 
   [[services.http_checks]]
-    interval = 10000
     grace_period = "5s"
+    interval = 10000
     method = "get"
     path = "/_internal/health"
     protocol = "http"
