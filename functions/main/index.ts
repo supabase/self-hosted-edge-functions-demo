@@ -16,7 +16,7 @@ serve(async (req: Request) => {
     )
   }
 
-  const service_path = `./examples/${service_name}`;
+  const service_path = `/home/deno/functions/${service_name}`;
   console.error(`serving the request with ${service_path}`);
 
   const memory_limit_mb = 150;
