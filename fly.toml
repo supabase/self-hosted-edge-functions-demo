@@ -1,4 +1,4 @@
-# fly.toml file generated for edge-runtime-demo on 2023-04-04T11:42:03+10:00
+# fly.toml file generated for edge-runtime-demo on 2023-04-04T12:17:09+10:00
 
 app = "edge-runtime-demo"
 kill_signal = "SIGINT"
