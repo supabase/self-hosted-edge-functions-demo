@@ -1,6 +1,6 @@
-# fly.toml file generated for edge-runtime-demo on 2023-04-04T12:17:09+10:00
+# fly.toml file generated for supa-edge-demo on 2023-04-11T09:48:10+10:00
 
-app = "edge-runtime-demo"
+app = "supa-edge-demo"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "syd"

@@ -63,22 +63,24 @@ serve(async (req: Request) => {
     )
   }
 
-  const service_path = `/home/deno/functions/${service_name}`;
-  console.error(`serving the request with ${service_path}`);
+  const servicePath = `/home/deno/functions/${service_name}`;
+  console.error(`serving the request with ${servicePath}`);
 
-  const memory_limit_mb = 150;
-  const worker_timeout_ms = 1 * 60 * 1000;
-  const no_module_cache = false;
-  const import_map_path = null;
-  const env_vars = [];
+  const memoryLimitMb = 150;
+  const workerTimeoutMs = 1 * 60 * 1000;
+  const noModuleCache = false;
+  const importMapPath = null;
+  const envVarsObj = Deno.env.toObject();
+  const envVars = Object.keys(envVarsObj).map(k => [k, envVarsObj[k]]);
+
   try {
     const worker = await EdgeRuntime.userWorkers.create({
-      service_path,
-      memory_limit_mb,
-      worker_timeout_ms,
-      no_module_cache,
-      import_map_path,
-      env_vars
+      servicePath,
+      memoryLimitMb,
+      workerTimeoutMs,
+      noModuleCache,
+      importMapPath,
+      envVars
     });
     return await worker.fetch(req);
   } catch (e) {
